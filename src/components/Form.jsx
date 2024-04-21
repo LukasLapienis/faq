@@ -10,10 +10,6 @@ export const Form = ({ setFaqData }) => {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !question) {
-      alert('Please fill all the fields');
-      return;
-    }
     await addDoc(collection(db, 'faq'), {
       name: name,
       email: email,
@@ -49,6 +45,7 @@ export const Form = ({ setFaqData }) => {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
         <label htmlFor="email">Email address</label>
         <input
@@ -57,13 +54,16 @@ export const Form = ({ setFaqData }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
+        <small>We'll never share your email with anyone else.</small>
         <label htmlFor="question">Question</label>
         <textarea
           placeholder="Enter your question here"
           id="question"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
+          required
         />
         <button type="submit">Send</button>
       </form>
