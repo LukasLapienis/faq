@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+  box-sizing: border-box;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80vw;
+}
+.displayTable,
+th,
+td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(223, 213, 213);
+}
+
+td {
+  overflow-wrap: break-word;
+}
+
+.displayContainer {
+  width: 80vw;
+}
+
+button {
+  width: 10vw;
+  background-color: rgb(57, 57, 226);
+  color: white;
+  border-radius: 3px;
+  border: none;
+  height: 30px;
+}
+
+h2 {
+  background-color: rgb(223, 213, 213);
+  width: 80vw;
+  padding-left: 5px;
+}
+
+@media (max-width: 500px) {
+  button {
+    width: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  h2,
+  .displayContainer,
+  form {
+    width: 800px;
+
+    button {
+      width: 100px;
+    }
+  }
+}
