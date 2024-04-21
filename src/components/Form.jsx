@@ -21,6 +21,17 @@ export const Form = ({ setFaqData }) => {
     })
       .then(() => {
         alert('added succesfully');
+        setFaqData((prev) => [
+          ...prev,
+          {
+            name: name,
+            email: email,
+            question: question,
+          },
+        ]);
+        setName('');
+        setEmail('');
+        setQuestion('');
       })
       .catch((err) => {
         console.log(err);
